@@ -1,3 +1,4 @@
+import { paraglideVitePlugin } from '@inlang/paraglide-js'
 import { defineConfig } from 'vite'
 import { devtools } from '@tanstack/devtools-vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
@@ -13,7 +14,7 @@ const config = defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [
+  plugins: [paraglideVitePlugin({ project: './project.inlang', outdir: './src/paraglide' }),
     devtools(),
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
     // this is the plugin that enables path aliases
