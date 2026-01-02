@@ -1,4 +1,13 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "example_message": "Guten Tag {username}"
+  "example_message": "Guten Tag {username}",
+  "homepage_title": "Willkommen bei TanStack Start",
+  "homepage_subtitle": "mit Paraglide i18n",
+  "homepage_description": "Dies ist eine Demonstration der Internationalisierung mit Inlang Paraglide. Wechseln Sie zwischen den Sprachen über den Sprachumschalter in der Kopfzeile.",
+  "homepage_feature_title": "Hauptmerkmale",
+  "homepage_feature_ssr": "Server-Side Rendering mit i18n-Unterstützung",
+  "homepage_feature_typesafe": "Typsichere Übersetzungen zur Kompilierzeit",
+  "homepage_feature_routing": "URL-basiertes Sprach-Routing (/en, /de)",
+  "homepage_example_title": "Verwendungsbeispiel",
+  "homepage_example_greeting": "Hallo, {name}! Willkommen in unserer mehrsprachigen Anwendung."
 }
