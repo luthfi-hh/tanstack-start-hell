@@ -14,7 +14,30 @@ const config = defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [paraglideVitePlugin({ project: './project.inlang', outdir: './src/paraglide' }),
+  plugins: [
+    paraglideVitePlugin({ 
+      project: './project.inlang', 
+      outdir: './src/paraglide',
+      outputStructure: 'message-modules',
+      cookieName: 'PARAGLIDE_LOCALE',
+      strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+      urlPatterns: [
+        {
+          pattern: '/',
+          localized: [
+            ['en', '/en'],
+            ['de', '/de'],
+          ],
+        },
+        {
+          pattern: '/:path(.*)?',
+          localized: [
+            ['en', '/en/:path(.*)?'],
+            ['de', '/de/:path(.*)?'],
+          ],
+        },
+      ],
+    }),
     devtools(),
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
     // this is the plugin that enables path aliases
